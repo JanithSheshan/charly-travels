@@ -1060,7 +1060,7 @@ section,
 .Gallery .Gallery-content .Gallery-info .preview-link,
 .Gallery .Gallery-content .Gallery-info .details-link {
   position: absolute;
-  left: calc(50% - 40px);
+  left: 50%;
   font-size: 26px;
   top: calc(50% - 14px);
   color: #fff;
@@ -1094,10 +1094,14 @@ section,
   background-color: var(--surface-color);
   position: relative;
   padding: 20px;
-  margin-bottom: 15px;
+  margin: 15px 0;
   border: 1px solid color-mix(in srgb, var(--default-color), transparent 85%);
   border-radius: 5px;
   overflow: hidden;
+}
+
+.faq .section-title {
+  padding-bottom: 30px;
 }
 
 .faq .faq-container .faq-item:last-child {
@@ -1527,4 +1531,86 @@ section,
   font-size: 20px;
   margin-right: 8px;
   color: var(--accent-color);
+}
+
+/*--------------------------------------------------------------
+# whatsapp fixeed button
+--------------------------------------------------------------*/
+.fixed-button {
+  display: block;
+  width: 60px;
+  background-color: #059652;
+  color: #fff;
+  text-align: center;
+  padding: 10px 0;
+  border-radius: 50px 0 0 50px;
+  position: fixed;
+  bottom: 28%;
+  right: 0;
+  z-index: 9999;
+}
+
+/*--------------------------------------------------------------
+# google translate
+--------------------------------------------------------------*/
+#google_translate_element {
+  z-index: 1000;
+  position: fixed;
+  bottom: calc(10px + 0px);
+  right: 50px!important;
+}
+.goog-te-gadget {
+  font-family: Roboto, 'Open Sans', sans-serif!important;
+  text-transform: uppercase;
+}
+.goog-te-gadget-simple  {
+  background-color: rgba(253, 253, 253, 0.2)!important;
+  border: 0px solid rgba(202, 202, 202, 0.5) !important;
+  padding: 8px!important;
+  border-radius: 4px!important;
+  font-size: 1rem!important;
+  line-height:2rem!important;
+  display: inline-block;
+  cursor: pointer;
+  zoom: 1;
+}
+.goog-te-menu2 {
+  max-width: 100%;
+}
+.goog-te-menu-value {
+  color: #fff !important;
+    &:before {
+    font-family: 'Material Icons';
+    content: "\E927";
+    margin-right: 16px;
+    font-size: 2rem;
+    vertical-align: -10px;
+    width:32px!important;
+  } 
+}
+.goog-te-menu-value span:nth-child(5) {
+  display:none;
+}
+.goog-te-menu-value span:nth-child(3) {
+  border:none!important;
+  font-family: 'Material Icons';
+  &:after {
+    font-family: 'Material Icons';
+    content: "\E5C5";
+    font-size: 1.5rem;
+    vertical-align: -6px;
+  }  
+}
+
+.goog-te-gadget-icon {
+    background-position: 0px 0px;
+    height: 32px!important;
+    width: 32px!important;
+    margin-right: 8px!important;
+    display: none;
+}
+
+/* Hide the Google Translate banner/frame */
+.goog-te-banner-frame {
+  display: none !important;
 }
