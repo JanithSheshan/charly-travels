@@ -203,5 +203,24 @@
   window.addEventListener('load', navmenuScrollspy);
   document.addEventListener('scroll', navmenuScrollspy);
 
+  let scrollTimeout;
+
+  window.addEventListener('scroll', function () {
+      const fixedButton = document.querySelector('.fixed-button');
+
+      // Show text when scrolled more than 100px
+      if (window.scrollY > 100) {
+          fixedButton.classList.add('show-text');
+
+          // Clear any previous timeout to avoid conflicting timers
+          clearTimeout(scrollTimeout);
+
+          // Set a timeout to hide the text after 3 seconds
+          scrollTimeout = setTimeout(() => {
+              fixedButton.classList.remove('show-text');
+          }, 1500); // 1500 milliseconds = 3 seconds
+      }
+  });
+
 })();
   

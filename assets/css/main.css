@@ -764,7 +764,6 @@ section,
   background: url(../img/hero-image.jpg);
   background-repeat: no-repeat;
   background-size: cover;
-  backdrop-filter: opacity(95%);
   background-position-x: right;
   background-position-y: bottom;
 }
@@ -816,7 +815,7 @@ section,
 }
 
 .hero .btn-watch-video i {
-  color: var(--accent-color);
+  color: #ffffffad;
   font-size: 32px;
   transition: 0.3s;
   line-height: 0;
@@ -856,6 +855,7 @@ section,
   .hero .btn-get-started,
   .hero .btn-watch-video {
     font-size: 13px;
+    color: #ffffffad;
   }
 }
 
@@ -903,6 +903,7 @@ section,
   display: flex;
   align-items: center;
   justify-content: center;
+  margin: auto;
   flex-shrink: 0;
   width: 64px;
   height: 64px;
@@ -973,6 +974,12 @@ section,
 
 .services .service-item:hover h4 a {
   color: var(--accent-color);
+}
+
+@media screen and (max-width: 768px) {
+  .services .service-item {
+    text-align: center;
+  }
 }
 
 /*--------------------------------------------------------------
@@ -1467,6 +1474,12 @@ section,
   margin-top: 10px;
 }
 
+@media screen and (max-width: 768px) {
+  .packages-activities {
+    text-align: center;
+  }
+}
+
 /*--------------------------------------------------------------
 # Service Details Section
 --------------------------------------------------------------*/
@@ -1537,18 +1550,40 @@ section,
 # whatsapp fixeed button
 --------------------------------------------------------------*/
 .fixed-button {
-  display: block;
+  display: inline-flex;
   width: 60px;
   background-color: #059652;
   color: #fff;
   text-align: center;
-  padding: 10px 0;
+  padding: 1px 5px;
   border-radius: 50px 0 0 50px;
   position: fixed;
-  bottom: 28%;
+  bottom: 15%;
   right: 0;
   z-index: 9999;
+  transition: width 0.3s ease;
 }
+
+.fixed-button i {
+  font-size: 24px;
+}
+
+.whatsapp-text {
+  display: none; /* Initially hide the text */
+  font-size: 14px;
+  margin: 0;
+}
+
+.fixed-button.show-text {
+  width: 120px; /* Expand the width to accommodate the text */
+}
+
+.fixed-button.show-text .whatsapp-text {
+    display: flex;
+    margin: auto;
+}
+
+
 
 /*--------------------------------------------------------------
 # google translate
