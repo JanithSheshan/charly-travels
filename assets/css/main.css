@@ -180,6 +180,7 @@ h6 {
   }
 
   .header .btn-getstarted {
+    text-align: center;
     order: 2;
     margin: 0 15px 0 0;
     padding: 6px 15px;
@@ -188,6 +189,13 @@ h6 {
   .header .navmenu {
     order: 3;
   }
+}
+
+@media screen and (max-width: 375px) {
+  .header .sitename {
+    font-size: 24px;
+  }
+  
 }
 
 /*--------------------------------------------------------------

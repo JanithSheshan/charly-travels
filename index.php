@@ -1,3 +1,18 @@
+<?php
+session_start();
+
+if (isset($_SESSION['success_message'])) {
+  echo "<script>alert('" . $_SESSION['success_message'] . "');</script>";
+  unset($_SESSION['success_message']);
+}
+
+if (isset($_SESSION['error_message'])) {
+  echo "<script>alert('" . $_SESSION['error_message'] . "');</script>";
+  unset($_SESSION['error_message']);
+}
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -7,7 +22,7 @@
   <title>Charly Travel and Tours | Guided Tours and Rentals in Sri Lanka</title>
   <meta name="description" content="Discover Sri Lanka with Charly Travel and Tours, offering guided tours from Galle to Ella, Sigiriya, Kandy, and more. Rent motorbikes and tuk-tuks for exploring the Southern Province. Customized travel experiences await you in Sri Lanka!" />
   <meta name="keywords" content="Sri Lanka guided tours, Galle to Ella, Galle to Sigiriya, Galle to Kandy, Galle motorbike rental, Galle tuk-tuk rental, Southern Province travel, Unawatuna tours, Charly Travel and Tours" />
-  <meta property="og:image" content="https://janithsheshan.github.io/charly-travels/assets/img/hero-img.png">
+  <meta property="og:image" content="https://raw.githubusercontent.com/JanithSheshan/charly-travels/refs/heads/main/assets/img/logo.png">
   <meta property="og:url" content="https://charlytravelandtours.com">
 
   <!-- Favicons -->
@@ -36,7 +51,7 @@
   <header id="header" class="header d-flex align-items-center sticky-top">
     <div class="container-fluid container-xl position-relative d-flex align-items-center">
 
-      <a href="index.html" class="logo d-flex align-items-center me-auto">
+      <a href="index.php" class="logo d-flex align-items-center me-auto">
         <!-- Uncomment the line below if you also wish to use an image logo -->
         <!-- <img src="assets/img/logo.png" alt=""> -->
         <h1 class="sitename"><b>Charly Travel</b></h1>
@@ -44,11 +59,11 @@
 
       <nav id="navmenu" class="navmenu">
         <ul>
-          <li><a href="index.html#hero" class="active">Home</a></li>
-          <li><a href="index.html#about">About</a></li>
-          <li><a href="index.html#services">Services</a></li>
-          <li><a href="index.html#Gallery">Gallery</a></li>
-          <li><a href="index.html#packages-activities">Packages & Activities</a></li>
+          <li><a href="index.php#hero" class="active">Home</a></li>
+          <li><a href="index.php#about">About</a></li>
+          <li><a href="index.php#services">Services</a></li>
+          <li><a href="index.php#Gallery">Gallery</a></li>
+          <li><a href="index.php#packages-activities">Packages & Activities</a></li>
           <!-- <li class="dropdown"><a href="#"><span>Dropdown</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
             <ul>
               <li><a href="#">Dropdown 1</a></li>
@@ -66,7 +81,7 @@
               <li><a href="#">Dropdown 4</a></li>
             </ul>
           </li> -->
-          <li><a href="index.html#contact">Contact</a></li>
+          <li><a href="index.php#contact">Contact</a></li>
         </ul>
         <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
       </nav>
@@ -87,8 +102,8 @@
             <h1>Explore Sri Lanka with Charly Travel and Tours</h1>
             <p>Your guide to unforgettable journeys from Galle to iconic destinations across Sri Lanka.</p>
             <div class="d-flex">
-              <a href="index.html#about" class="btn-get-started">Get Started</a>
-              <a href="https://www.youtube.com/watch?v=Y7f98aduVJ8" class="glightbox btn-watch-video d-flex align-items-center"><i class="bi bi-play-circle"></i><span>Watch Video</span></a>
+              <a href="index.php#about" class="btn-get-started">Get Started</a>
+              <a href="#" class="glightbox btn-watch-video d-flex align-items-center"><i class="bi bi-play-circle"></i><span>Watch Video</span></a>
             </div>
           </div>
           <div class="col-lg-6 order-1 order-lg-2 hero-img" data-aos="zoom-out" data-aos-delay="200">
@@ -114,7 +129,7 @@
         <div class="row gy-3">
 
           <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
-            <img src="assets/img/about-img.jpeg" alt="" class="img-fluid image">
+            <img src="assets/img/about-img.jpg" alt="" class="img-fluid image">
           </div>
 
           <div class="col-lg-6 d-flex flex-column justify-content-center" data-aos="fade-up" data-aos-delay="200">
@@ -590,15 +605,16 @@
     <!-- /Team Section -->
 
     <!-- Clients Section -->
-    <section id="clients" class="clients section light-background">
+    <!-- <section id="clients" class="clients section light-background"> -->
 
       <!-- Section Title -->
-      <div class="container section-title" data-aos="fade-up">
+      <!-- <div class="container section-title" data-aos="fade-up">
         <h2>Clients</h2>
         <p>Necessitatibus eius consequatur ex aliquid fuga eum quidem sint consectetur velit</p>
-      </div><!-- End Section Title -->
+      </div> -->
+      <!-- End Section Title -->
 
-      <div class="container" data-aos="fade-up" data-aos-delay="100">
+      <!-- <div class="container" data-aos="fade-up" data-aos-delay="100">
 
         <div class="swiper init-swiper">
           <script type="application/json" class="swiper-config">
@@ -649,7 +665,8 @@
 
       </div>
 
-    </section><!-- /Clients Section -->
+    </section> -->
+    <!-- /Clients Section -->
 
     <!-- Contact Section -->
     <section id="contact" class="contact section">
@@ -696,12 +713,12 @@
           </div>
 
           <div class="col-lg-7">
-            <form action="forms/contact.php" method="post" class="php-email-form" data-aos="fade-up" data-aos-delay="200">
+            <form action="contact.php" method="post" class="php-email-form" data-aos="fade-up" data-aos-delay="200">
               <div class="row gy-4">
 
                 <div class="col-md-6">
                   <label for="name-field" class="pb-2">Your Name</label>
-                  <input type="text" name="name" id="name-field" class="form-control" required="">
+                  <input type="text" name="name" id="name" class="form-control" required="">
                 </div>
 
                 <div class="col-md-6">
@@ -711,12 +728,12 @@
 
                 <div class="col-md-12">
                   <label for="subject-field" class="pb-2">Subject</label>
-                  <input type="text" class="form-control" name="subject" id="subject-field" required="">
+                  <input type="text" class="form-control" name="subjectnew" id="subjectnew" required="">
                 </div>
 
                 <div class="col-md-12">
                   <label for="message-field" class="pb-2">Message</label>
-                  <textarea class="form-control" name="message" rows="10" id="message-field" required=""></textarea>
+                  <textarea class="form-control" name="message" rows="10" id="message" required=""></textarea>
                 </div>
 
                 <div class="col-md-12 text-center">
@@ -765,7 +782,7 @@
     <div class="container footer-top">
       <div class="row gy-4">
         <div class="col-lg-4 col-md-6 footer-about">
-          <a href="index.html" class="d-flex align-items-center">
+          <a href="index.php" class="d-flex align-items-center">
             <span class="sitename">Charly Travel and Tours</span>
           </a>
           <div class="footer-contact pt-3">
@@ -819,7 +836,7 @@
     <div class="container copyright text-center mt-4">
       <p>© <span>Copyright</span> <strong class="px-1 sitename">Charly Travel and Tours</strong> <span>All Rights Reserved</span></p>
       <div class="credits">
-        by <a href="https://janithaththanayaka.com/">Janith</a>
+        Powered by <a href="https://forgear.lk/" target="_blank">FORGEAR</a>
       </div>
     </div>
 
